@@ -2,7 +2,7 @@
 
 ## Resumo
 
-Este projeto investigou o impacto das mutações no cromossomo IV de Saccharomyces cerevisiae usando a ferramenta Mutation Simulator com taxas reduzidas de mutações...
+Este estudo investigou o impacto das mutações no cromossomo IV de Saccharomyces cerevisiae usando a ferramenta Mutation Simulator com taxas reduzidas de mutações (2% de inserção, seguidas por 2% de deleção). Em seguida, a predição de genes foi realizada utilizando a ferramenta Augustus. Os resultados revelaram que a sequência sem mutação apresentou uma predição de 707 genes, enquanto a sequência com 2% de inserções resultou em 460 genes e a sequência com 2% de deleções produziu 286 genes. Além disso, a reprodutibilidade dos experimentos foi testada por outro membro da equipe, demonstrando resultados ligeiramente diferentes. Portanto, concluímos que, devido à natureza aleatória das mutações geradas pela ferramenta, a reprodutibilidade pode ser afetada.
 
 ## Introdução
 
