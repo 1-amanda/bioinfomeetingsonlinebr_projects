@@ -1,0 +1,22 @@
+# Script de Criação do Ambiente Conda
+conda create -n py310 python=3.10
+conda activate py310
+
+# Script de Instalação da Ferramenta Mutation-Simulator com pip
+conda activate py310  # Certifique-se de que o ambiente 'py310' esteja ativado
+pip install Mutation-Simulator  # Substitua 'Mutation-Simulator' pelo nome correto da ferramenta, se necessário
+
+# Script de Simulação de Mutações com Mutation-Simulator
+conda activate py310  # Certifique-se de que o ambiente 'py310' esteja ativado
+Mutation-Simulator ARGS --mutation-type insertion --mutation-rate 0.02  # Para inserções
+Mutation-Simulator ARGS --mutation-type deletion --mutation-rate 0.02  # Para deleções
+
+# Script para Obtenção do Arquivo VCF
+conda create -n samtools samtools
+conda activate samtools
+sudo apt install bedops
+bedops --chop 10000 sequence.bed > sequence.10kbwindows.bed
+sudo apt install bcftools
+bcftools mpileup -Ou -f saccharomyces_IV.fasta sim_reads_1.fq sim_reads_2.fq | bcftools call -mv -Ob -o sim_variants.bcf
+bcftools view sim_variants.bcf -Ov -o sim_variants.vcf
+head sim_variants.vcf
